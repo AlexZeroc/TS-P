@@ -45,23 +45,23 @@ class CityFind extends Component {
     }
 
     sendCity(event) {
+        this.props.onChange(this.state.newCity);
         const city = this.state.newCity;
-        this.props.dispatch(fetchCity(event));
 
-         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=6487c11bf8c2584a1d629b9b379e5dd0`)
+         /*fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=6487c11bf8c2584a1d629b9b379e5dd0`)
              .then(function(response) {
                  return response.json();
              })
              .then(myJson => {
                  this.setState({temp:myJson.main});
-             });
+             });*/
 
     }
-    tempCity(){
-        if(this.state.temp === undefined){
+    tempCity(city){
+        if(city===undefined){
             return null
-        } else if(this.state.temp) {
-            const tempCity = this.state.temp;
+        } else if(city) {
+            const tempCity = city;
             return (
                 <div>
                     <table className="table">
@@ -84,7 +84,7 @@ class CityFind extends Component {
     }
 
     render(){
-        const tempCityMxMin = this.tempCity();
+        const tempCityMxMin = this.tempCity(this.props.city.categories);
         return (
         <div
             className=""

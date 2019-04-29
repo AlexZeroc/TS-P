@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CityFind from "./components/cityFind";
+import CityFindContainer from "./components/cityFindContainer";
 import {Provider} from "react-redux";
 import store from "./store";
 
@@ -8,7 +8,7 @@ class App extends Component  {
   return (
   <div>
     <Provider store={store}>
-    <CityFind/>
+    <CityFindContainer/>
     </Provider>
   </div>
   )

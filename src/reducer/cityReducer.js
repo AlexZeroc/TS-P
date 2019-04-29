@@ -6,7 +6,7 @@ const productReducer = (state = {}, action) => {
 
             return {
                 ...state,
-                categories: action
+                categories: action.payload
             };
         }
 
