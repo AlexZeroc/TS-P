@@ -1,0 +1,1 @@
+export const CITY_LOADED = 'CITY_LOADED';
